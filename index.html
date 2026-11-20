@@ -1,120 +1,503 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CV · Fiorela Qqueccaño Suma</title>
-<meta name="description" content="Currículum de Fiorela Qqueccaño Suma, estudiante de Arquitectura de Plataformas y Servicios de TI.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101d2d">
+    <meta name="description" content="Portafolio profesional de Fiorela Qqueccaño Suma, estudiante de Arquitectura de Plataformas y Servicios de TI.">
+
+    <title>Fiorela Qqueccaño Suma | Portafolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="cv">
-  <aside class="side">
-    <div class="photo"><img src="img/foto.jpg" alt="Foto de Fiorela Qqueccaño Suma"></div>
 
-    <h2>Contacto</h2>
-    <ul class="contact">
-      <li><span>Teléfono</span><a href="tel:+51916070090">+51 916 070 090</a></li>
-      <li><span>Correo</span><a href="mailto:fiorelasuma@gmail.com" id="mail">fiorelasuma@gmail.com</a></li>
-      <li><span>DNI</span>60675824</li>
-      <li><span>Fecha de nacimiento</span>23 de julio de 2005 (21 años)</li>
-      <li><span>Ubicación</span>Perú</li>
-    </ul>
+<div class="page-shell">
 
-    <h2>Habilidades</h2>
-    <ul class="skills">
-      <li>Soporte de plataformas TI</li><li>Redes y servicios</li><li>Bases de datos</li>
-      <li>Comunicación</li><li>Trabajo en equipo</li><li>Aprendizaje rápido</li>
-    </ul>
+    <!-- MENU PRINCIPAL -->
+    <nav class="top-nav">
 
-    <h2>Idiomas</h2>
-    <ul class="bars">
-      <li><b>Español</b><i data-level="100"></i></li>
-      <li><b>Inglés</b><i data-level="35"></i></li>
-    </ul>
+        <a class="brand" href="#inicio">
+            <span class="brand-mark">FQ</span>
+            <span>PORTAFOLIO<span class="brand-dot">.</span></span>
+        </a>
 
-    <h2>Intereses</h2>
-    <p class="tags"><span>Tecnología</span><span>Redes</span><span>Innovación</span><span>Aprender</span></p>
-  </aside>
+        <div class="nav-links">
+            <a href="#perfil">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
 
-  <main class="main">
-    <header>
-      <svg class="crown" viewBox="0 0 80 50" aria-hidden="true"><path d="M4 44 L10 12 L28 28 L40 4 L52 28 L70 12 L76 44 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
-      <h1>Fiorela<br>Qqueccaño Suma</h1>
-      <p class="role">Arquitectura de Plataformas y Servicios TI</p>
-      <div class="actions">
-        <button id="print" type="button">Descargar / imprimir CV</button>
-        <a href="https://wa.me/51916070090" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-      </div>
-    </header>
+        <button id="print" class="nav-print">
+            Descargar CV ↗
+        </button>
 
-    <section>
-      <h3>Perfil profesional</h3>
-      <p>Estudiante comprometida de Arquitectura de Plataformas y Servicios de Tecnologías de la Información. Me interesa aprender y aplicar soluciones tecnológicas, con ganas de crecer en una empresa donde pueda aportar con responsabilidad, orden y ganas de superarme.</p>
-    </section>
+    </nav>
 
-    <section>
-      <h3>Objetivo laboral</h3>
-      <p>Realizar prácticas pre‑profesionales en un área de soporte técnico, redes o administración de sistemas, donde pueda poner en práctica lo aprendido, fortalecer mis conocimientos y contribuir al buen funcionamiento de los servicios tecnológicos de la organización.</p>
-    </section>
+    <main>
 
-    <section>
-      <h3>Educación</h3>
-      <div class="item">
-        <h4>Técnica en Arquitectura de Plataformas y Servicios de Tecnologías de la Información</h4>
-        <p class="muted">IESTP Santa Lucía</p><span class="badge">Superior · En curso</span>
-      </div>
-      <div class="item">
-        <h4>Educación secundaria</h4>
-        <p class="muted">Colegio José Carlos Mariátegui · Escuela Glorioso 71009</p>
-      </div>
-    </section>
+        <!-- PRESENTACION -->
+        <section class="hero" id="inicio">
 
-    <section>
-      <h3>Competencias técnicas</h3>
-      <ul class="bars wide">
-        <li><b>Soporte técnico de equipos y plataformas</b><i data-level="75"></i></li>
-        <li><b>Redes y servicios</b><i data-level="65"></i></li>
-        <li><b>Bases de datos</b><i data-level="60"></i></li>
-        <li><b>Microsoft Office (Word, Excel, PowerPoint)</b><i data-level="80"></i></li>
-        <li><b>Instalación de sistemas operativos y software</b><i data-level="70"></i></li>
-      </ul>
-    </section>
+            <div class="hero-copy">
 
-    <section>
-      <h3>Qué puedo hacer</h3>
-      <div class="grid">
-        <article><h4>Soporte TI</h4><p>Diagnóstico y solución de problemas básicos de hardware y software.</p></article>
-        <article><h4>Redes</h4><p>Conceptos de configuración, conexión y mantenimiento de redes.</p></article>
-        <article><h4>Datos</h4><p>Consultas y organización de información en bases de datos.</p></article>
-        <article><h4>Documentación</h4><p>Registro ordenado de tareas, incidencias y procedimientos.</p></article>
-      </div>
-    </section>
+                <p class="eyebrow">
+                    <span class="status-dot"></span>
+                    ESTUDIANTE DE TECNOLOGÍA · PERÚ
+                </p>
 
-    <section>
-      <h3>Cualidades personales</h3>
-      <p class="tags big"><span>Responsabilidad</span><span>Orden</span><span>Puntualidad</span><span>Comunicación</span><span>Trabajo en equipo</span><span>Ganas de superarse</span><span>Adaptabilidad</span></p>
-    </section>
+                <h1>
+                    Hola, soy<br>
+                    <span>Fiorela Qqueccaño Suma.</span>
+                </h1>
 
-    <section>
-      <h3>Datos personales</h3>
-      <dl class="data">
-        <div><dt>Nombre completo</dt><dd>Fiorela Qqueccaño Suma</dd></div>
-        <div><dt>DNI</dt><dd>60675824</dd></div>
-        <div><dt>Nacimiento</dt><dd>23 de julio de 2005</dd></div>
-        <div><dt>Disponibilidad</dt><dd>Inmediata</dd></div>
-      </dl>
-    </section>
+                <p class="hero-role">
+                    Arquitectura de Plataformas y Servicios
+                    de Tecnologías de la Información
+                </p>
 
-    <section>
-      <h3>Referencias</h3>
-      <p class="muted">Disponibles a solicitud.</p>
-    </section>
-    <footer>© <span id="y"></span> Fiorela Qqueccaño Suma</footer>
-  </main>
+                <p class="hero-intro">
+                    Me apasiona la tecnología y aprender cómo
+                    las soluciones digitales pueden resolver
+                    problemas reales. Estoy construyendo mi
+                    camino profesional con responsabilidad,
+                    curiosidad y muchas ganas de crecer.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#proyectos" class="button button-primary">
+                        Conoce mis proyectos ↘
+                    </a>
+
+                    <a href="mailto:fiorelasuma@gmail.com"
+                       class="button button-ghost">
+                        Hablemos ↗
+                    </a>
+
+                </div>
+
+                <div class="hero-note">
+                    En constante aprendizaje y evolución.
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="photo-frame">
+
+                    <img src="img/foto.jpg"
+                         alt="Fotografía profesional de Fiorela Qqueccaño Suma">
+
+                    <div class="photo-caption">
+                        <strong>Fiorela Qqueccaño Suma</strong>
+                        <small>Futura profesional TI</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- AREAS DE INTERES -->
+        <section class="intro-strip">
+
+            <span>TECNOLOGÍA</span>
+            <span>✦</span>
+            <span>SOPORTE TI</span>
+            <span>✦</span>
+            <span>REDES</span>
+            <span>✦</span>
+            <span>BASES DE DATOS</span>
+            <span>✦</span>
+            <span>INNOVACIÓN</span>
+
+        </section>
+
+        <!-- SOBRE MI -->
+        <section class="section" id="perfil">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">01 / CONÓCEME</p>
+
+                <h2>
+                    Una mente curiosa,<br>
+                    <span>con objetivos claros.</span>
+                </h2>
+
+            </div>
+
+            <div class="about-content">
+
+                <p class="lead">
+                    Soy estudiante de Arquitectura de Plataformas
+                    y Servicios de Tecnologías de la Información
+                    en el IESTP Santa Lucía.
+                </p>
+
+                <p>
+                    Me interesa desarrollar conocimientos en
+                    soporte técnico, redes, administración de
+                    sistemas y bases de datos. Disfruto aprender,
+                    organizar ideas y convertir lo aprendido
+                    en proyectos prácticos. Busco una oportunidad
+                    de prácticas preprofesionales donde pueda
+                    aportar, adquirir experiencia y seguir creciendo.
+                </p>
+
+                <div class="about-facts">
+
+                    <div>
+                        <strong>01</strong>
+                        <h3>Responsabilidad</h3>
+                        <p>Compromiso con cada tarea.</p>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <h3>Aprendizaje</h3>
+                        <p>Disposición para nuevos retos.</p>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <h3>Colaboración</h3>
+                        <p>Comunicación y trabajo en equipo.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="section" id="habilidades">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">02 / MIS CONOCIMIENTOS</p>
+
+                <h2>
+                    Habilidades y<br>
+                    <span>competencias.</span>
+                </h2>
+
+            </div>
+
+            <div class="skills-layout">
+
+                <article class="skill-card">
+                    <span class="skill-symbol">⌘</span>
+                    <h3>Soporte técnico</h3>
+                    <p>
+                        Diagnóstico inicial y solución de problemas
+                        básicos de hardware y software.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-symbol">⌁</span>
+                    <h3>Redes y servicios</h3>
+                    <p>
+                        Conocimientos académicos sobre conexión,
+                        configuración y mantenimiento de redes.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-symbol">▤</span>
+                    <h3>Bases de datos</h3>
+                    <p>
+                        Organización de información y consultas
+                        para el manejo de datos.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-symbol">▧</span>
+                    <h3>Herramientas digitales</h3>
+                    <p>
+                        Manejo de Word, Excel, PowerPoint e
+                        instalación de software.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="soft-skills">
+                <span>También me caracterizo por:</span>
+                <b>Organización</b>
+                <b>Puntualidad</b>
+                <b>Comunicación</b>
+                <b>Adaptabilidad</b>
+                <b>Trabajo en equipo</b>
+            </div>
+
+        </section>
+
+        <!-- PROYECTOS -->
+        <section class="section" id="proyectos">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">03 / EXPERIENCIA PRÁCTICA</p>
+
+                <h2>
+                    Proyectos que convierten<br>
+                    <span>ideas en aprendizaje.</span>
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Estos proyectos académicos me permiten poner
+                en práctica mis conocimientos y fortalecer
+                mis habilidades tecnológicas.
+            </p>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+
+                    <div class="project-top">
+                        <span>PROYECTO 01</span>
+                        <span>▦</span>
+                    </div>
+
+                    <div class="project-art attendance-art">
+                        <div class="art-window">
+                            <b>ASISTENCIAS</b>
+                            <span>✓</span>
+                            <small>Control académico</small>
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            DESARROLLO WEB · BASES DE DATOS
+                        </p>
+
+                        <h3>Sistema de control de asistencias</h3>
+
+                        <p>
+                            Aplicación web académica orientada al
+                            registro y seguimiento de asistencia
+                            de estudiantes, con gestión de
+                            información y base de datos.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>MySQL</span>
+                            <span>HTML / CSS</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-top">
+                        <span>PROYECTO 02</span>
+                        <span>◇</span>
+                    </div>
+
+                    <div class="project-art store-art">
+                        <div class="store-window">
+                            <span>BELLA STORE</span>
+                            <b>BEAUTY<br>& STYLE.</b>
+                            <small>TIENDA ONLINE</small>
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            COMERCIO ELECTRÓNICO · DISEÑO WEB
+                        </p>
+
+                        <h3>Bella Store – tienda virtual</h3>
+
+                        <p>
+                            Proyecto de tienda online de belleza,
+                            trabajando la presentación de productos,
+                            páginas informativas y experiencia
+                            de compra.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>WordPress</span>
+                            <span>WooCommerce</span>
+                            <span>Elementor</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="project-disclaimer">
+                Proyectos académicos en desarrollo y aprendizaje continuo.
+            </p>
+
+        </section>
+
+        <!-- EDUCACION -->
+        <section class="section" id="formacion">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">04 / MI FORMACIÓN</p>
+
+                <h2>
+                    Aprendiendo para<br>
+                    <span>construir mi futuro.</span>
+                </h2>
+
+            </div>
+
+            <div class="education-timeline">
+
+                <article class="timeline-item">
+
+                    <p class="timeline-date">
+                        FORMACIÓN SUPERIOR · EN CURSO
+                    </p>
+
+                    <h3>
+                        Arquitectura de Plataformas y Servicios
+                        de Tecnologías de la Información
+                    </h3>
+
+                    <p>
+                        Instituto de Educación Superior
+                        Tecnológico Público Santa Lucía.
+                    </p>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <p class="timeline-date">FORMACIÓN ESCOLAR</p>
+
+                    <h3>Educación secundaria</h3>
+
+                    <p>
+                        Colegio José Carlos Mariátegui ·
+                        Escuela Glorioso 71009.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- IDIOMAS -->
+        <section class="section">
+
+            <div class="section-heading">
+                <p class="eyebrow">05 / COMUNICACIÓN</p>
+                <h2>Idiomas e intereses.</h2>
+            </div>
+
+            <div class="language-interest">
+
+                <div>
+                    <h3>Idiomas</h3>
+                    <p>Español <span>Fluido</span></p>
+                    <p>Inglés <span>En aprendizaje</span></p>
+                </div>
+
+                <div>
+                    <h3>Lo que me inspira</h3>
+
+                    <div class="interest-tags">
+                        <span>Tecnología</span>
+                        <span>Redes</span>
+                        <span>Innovación</span>
+                        <span>Aprendizaje continuo</span>
+                        <span>Soluciones digitales</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contact-section" id="contacto">
+
+            <p class="eyebrow">06 / CONECTEMOS</p>
+
+            <h2>
+                ¿Hablamos de una<br>
+                <span>nueva oportunidad?</span>
+            </h2>
+
+            <p>
+                Estoy interesada en seguir aprendiendo
+                y aportar en el área de tecnología.
+                Será un gusto conversar.
+            </p>
+
+            <div class="contact-actions">
+
+                <a class="button button-light"
+                   href="mailto:fiorelasuma@gmail.com">
+                    Enviar un correo ↗
+                </a>
+
+                <a class="contact-whatsapp"
+                   href="https://wa.me/51916070090"
+                   target="_blank">
+                    Escribir por WhatsApp ↗
+                </a>
+
+            </div>
+
+            <div class="contact-details">
+                <span>fiorelasuma@gmail.com</span>
+                <span>+51 916 070 090</span>
+                <span>Perú</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <p>Fiorela Qqueccaño Suma.</p>
+
+        <p>
+            Hecho con dedicación ·
+            <span id="y"></span>
+        </p>
+
+        <a href="#inicio">Volver arriba ↑</a>
+
+    </footer>
+
 </div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
