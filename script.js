@@ -1,129 +1,96 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. ACTUALIZAR AUTOMÁTICAMENTE EL AÑO
-    const yearElements = document.querySelectorAll("#year, [data-year]");
+  // Año automático del pie de página
+  const year = document.getElementById("y");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-    yearElements.forEach(element => {
-        element.textContent = new Date().getFullYear();
+  // Menú desplegable para celulares
+  const menuButton = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  if (menuButton && nav) {
+    menuButton.setAttribute("aria-expanded", "false");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú"
+      );
     });
 
-    // 2. BOTÓN PARA IMPRIMIR O GUARDAR COMO PDF
-    const printButtons = document.querySelectorAll(
-        ".nav-print, [data-print]"
-    );
-
-    printButtons.forEach(button => {
-        button.addEventListener("click", event => {
-            event.preventDefault();
-            window.print();
-        });
+    nav.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Abrir menú");
+      });
     });
 
-    // 3. ANIMACIONES AL APARECER EN PANTALLA
-    const animatedElements = document.querySelectorAll(
-        ".section-heading, .about-content, .about-facts > *, " +
-        ".skill-card, .project-card, .timeline-item, " +
-        ".language-interest, .contact-section"
-    );
-
-    animatedElements.forEach(element => {
-        element.classList.add("scroll-reveal");
+    document.addEventListener("click", event => {
+      if (!nav.contains(event.target) && !menuButton.contains(event.target)) {
+        nav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Abrir menú");
+      }
     });
+  }
 
-    // Agregar estilos de animación
-    const animationStyles = document.createElement("style");
+  // Animaciones al desplazarse
+  const revealItems = document.querySelectorAll(
+    ".section-heading, .about-main, .value-card, .skill-card, " +
+    ".project-card, .education-item, .extra-card, .contact-section"
+  );
 
-    animationStyles.textContent = `
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity .75s ease, transform .75s ease;
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.12 });
 
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .scroll-reveal {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-        }
-    `;
-
-    document.head.appendChild(animationStyles);
-
-    // Detectar cuándo aparecen los elementos
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.12
-        });
-
-        animatedElements.forEach(element => {
-            observer.observe(element);
-        });
-    } else {
-        animatedElements.forEach(element => {
-            element.classList.add("visible");
-        });
-    }
-
-    // 4. RESALTAR EL ENLACE DE LA SECCIÓN ACTUAL
-    const navigationLinks = document.querySelectorAll(
-        '.nav-links a[href^="#"]'
-    );
-
-    const pageSections = document.querySelectorAll(
-        "main section[id], section[id]"
-    );
-
-    if ("IntersectionObserver" in window && pageSections.length) {
-        const sectionObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navigationLinks.forEach(link => {
-                        link.classList.toggle(
-                            "active",
-                            link.getAttribute("href") === "#" + entry.target.id
-                        );
-                    });
-                }
-            });
-        }, {
-            rootMargin: "-25% 0px -60% 0px"
-        });
-
-        pageSections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-    }
-
-    // 5. EFECTO SUAVE AL HACER CLIC EN EL MENÚ
-    navigationLinks.forEach(link => {
-        link.addEventListener("click", event => {
-            const targetId = link.getAttribute("href");
-            const target = document.querySelector(targetId);
-
-            if (target) {
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
+    revealItems.forEach(item => {
+      item.classList.add("scroll-reveal");
+      revealObserver.observe(item);
     });
+  } else {
+    revealItems.forEach(item => item.classList.add("visible"));
+  }
+
+  // Resaltar la sección actual en el menú
+  const links = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = document.querySelectorAll("main section[id]");
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id
+            );
+          });
+        }
+      });
+    }, { rootMargin: "-25% 0px -60% 0px" });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
+  // Botón para imprimir o guardar en PDF
+  document.querySelectorAll("[data-print]").forEach(button => {
+    button.addEventListener("click", event => {
+      event.preventDefault();
+      window.print();
+    });
+  });
 
 });
