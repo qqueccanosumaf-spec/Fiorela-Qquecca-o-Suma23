@@ -1342,3 +1342,358 @@ button {
         break-inside: avoid;
     }
 }
+
+
+/* ==========================================
+   FIORELA | PROYECTOS PREMIUM ANIMADOS
+========================================== */
+
+/* CONTENEDOR GENERAL */
+
+.projects-section {
+    position: relative;
+    isolation: isolate;
+}
+
+.projects-section .section-heading {
+    margin-bottom: 45px;
+}
+
+.projects-section .section-heading h2 {
+    text-shadow: 0 5px 20px rgba(137,86,220,.10);
+}
+
+/* TARJETAS */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    perspective: 1200px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(168,85,247,.22);
+    border-radius: 27px;
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 15px 40px rgba(88,52,125,.10);
+    transition: transform .5s ease, box-shadow .5s ease;
+    animation: proyectoEntrada .9s ease both;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.42),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left .8s ease;
+}
+
+.project-card:hover::before {
+    left: 150%;
+}
+
+.project-card:hover {
+    transform: translateY(-13px) scale(1.015);
+    border-color: #dc75bd;
+    box-shadow:
+        0 25px 55px rgba(137,86,220,.19),
+        0 0 25px rgba(232,75,155,.10);
+}
+
+/* VENTANAS VISUALES */
+
+.project-visual {
+    min-height: 285px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+}
+
+.project-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 30%),
+        radial-gradient(circle at 85% 85%,rgba(255,255,255,.25),transparent 35%);
+    animation: luzProyecto 6s ease-in-out infinite alternate;
+}
+
+.project-visual::after {
+    content: "✦";
+    position: absolute;
+    top: 22px;
+    right: 35px;
+    color: rgba(255,255,255,.8);
+    font-size: 30px;
+    animation: estrellaProyecto 4s ease-in-out infinite;
+}
+
+/* SISTEMA DE ASISTENCIAS */
+
+.attendance-visual {
+    background:
+        linear-gradient(135deg,#7661ce,#a78bfa,#54bfd0);
+    background-size: 200% 200%;
+    animation: fondoSistema 8s ease infinite;
+}
+
+.attendance-visual .project-window {
+    border: 2px solid rgba(255,255,255,.8);
+    border-radius: 17px;
+    box-shadow: 0 25px 50px rgba(49,32,94,.25);
+    animation: ventanaFlotante 5s ease-in-out infinite;
+}
+
+.attendance-visual .window-bar {
+    background: linear-gradient(90deg,#493568,#8052a8);
+}
+
+.attendance-visual .preview-sidebar {
+    background: linear-gradient(180deg,#64448e,#372955);
+}
+
+.attendance-visual .preview-stats span {
+    background: linear-gradient(135deg,#f4c8e3,#c6b8fb,#a8e8f2);
+    transition: .4s;
+}
+
+.project-card:hover .preview-stats span {
+    transform: translateY(-5px);
+}
+
+/* ANIMACIÓN DE GRÁFICAS */
+
+.preview-chart i {
+    transform-origin: bottom;
+    animation: barrasCrecen 2.5s ease-in-out infinite alternate;
+}
+
+.preview-chart i:nth-child(2) { animation-delay: .2s; }
+.preview-chart i:nth-child(3) { animation-delay: .4s; }
+.preview-chart i:nth-child(4) { animation-delay: .6s; }
+.preview-chart i:nth-child(5) { animation-delay: .8s; }
+.preview-chart i:nth-child(6) { animation-delay: 1s; }
+
+/* BELLA STORE */
+
+.bella-visual {
+    background:
+        radial-gradient(circle at 75% 20%,#ffe2f1,transparent 35%),
+        linear-gradient(135deg,#e77ab4,#b58be5,#f2b7d6);
+    background-size: 200% 200%;
+    animation: fondoBella 8s ease infinite;
+}
+
+.bella-preview {
+    position: relative;
+    border: 2px solid rgba(255,255,255,.9);
+    border-radius: 5px;
+    box-shadow: 0 25px 55px rgba(107,42,91,.22);
+    animation: ventanaFlotante 5s ease-in-out infinite;
+}
+
+.bella-preview strong {
+    background: linear-gradient(90deg,#a62d77,#e66ca8,#8e55b9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.bella-products i {
+    display: inline-block;
+    animation: productoBrilla 2s ease-in-out infinite alternate;
+}
+
+.bella-products i:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.bella-products i:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.project-card:hover .bella-preview {
+    box-shadow: 0 28px 55px rgba(166,45,119,.25);
+}
+
+/* INFORMACIÓN DE PROYECTOS */
+
+.project-details {
+    position: relative;
+    padding: 27px;
+}
+
+.project-label {
+    align-items: center;
+    color: #d63394;
+    font-size: .68rem;
+}
+
+.project-label span:last-child {
+    padding: 6px 11px;
+    border-radius: 30px;
+    background: #f7e9ff;
+    color: #8650b5;
+}
+
+.project-details h3 {
+    position: relative;
+    display: inline-block;
+    color: #492b67;
+    font-size: 1.38rem;
+    transition: color .3s;
+}
+
+.project-card:hover .project-details h3 {
+    color: #d63394;
+}
+
+.project-details p {
+    color: #766785;
+    line-height: 1.8;
+}
+
+/* ETIQUETAS TECNOLÓGICAS */
+
+.tech-tags {
+    gap: 9px;
+}
+
+.tech-tags span {
+    padding: 8px 13px;
+    border: 1px solid #e8d2f6;
+    background: linear-gradient(135deg,#fff2fa,#f1eaff);
+    color: #70418f;
+    font-weight: 700;
+    transition: all .3s ease;
+}
+
+.tech-tags span:hover {
+    color: white;
+    border-color: transparent;
+    background: linear-gradient(100deg,#e83e9d,#8956dc);
+    transform: translateY(-4px);
+    box-shadow: 0 7px 16px rgba(137,86,220,.2);
+}
+
+/* NOTA INFERIOR */
+
+.project-note {
+    margin-top: 30px;
+    padding: 17px;
+    border: 1px solid #ead8f5;
+    border-radius: 15px;
+    background: linear-gradient(100deg,#fff3fa,#f2ecff,#edfbff);
+    color: #704b8d;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ANIMACIONES */
+
+@keyframes proyectoEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ventanaFlotante {
+    0%,100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+@keyframes fondoSistema {
+    0%,100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes fondoBella {
+    0%,100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes luzProyecto {
+    from { opacity: .35; }
+    to { opacity: 1; }
+}
+
+@keyframes estrellaProyecto {
+    0%,100% { transform: rotate(0) scale(1); opacity: .6; }
+    50% { transform: rotate(90deg) scale(1.5); opacity: 1; }
+}
+
+@keyframes barrasCrecen {
+    from { filter: brightness(.85); }
+    to { filter: brightness(1.4); }
+}
+
+@keyframes productoBrilla {
+    from { transform: translateY(0) rotate(-8deg); }
+    to { transform: translateY(-7px) rotate(8deg); }
+}
+
+/* CELULARES */
+
+@media(max-width:700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-visual {
+        min-height: 245px;
+    }
+
+    .project-details {
+        padding: 22px;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* REDUCIR MOVIMIENTO SI SE SOLICITA */
+
+@media(prefers-reduced-motion:reduce) {
+    .project-card,
+    .project-visual,
+    .project-window,
+    .bella-preview,
+    .preview-chart i,
+    .bella-products i {
+        animation: none !important;
+        transition: none !important;
+    }
+}
