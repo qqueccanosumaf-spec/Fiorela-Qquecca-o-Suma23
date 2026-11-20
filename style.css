@@ -1862,3 +1862,26 @@ button {
         font-size: 25px;
     }
 }
+
+
+/* LOGO DEL TECNO COMO MARCA DE AGUA */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("img/logo-tecno.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: min(65vw, 650px);
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    body::before {
+        background-size: 90vw;
+        opacity: 0.06;
+    }
+}
