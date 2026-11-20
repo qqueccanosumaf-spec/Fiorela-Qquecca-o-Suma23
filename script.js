@@ -1,15 +1,41 @@
-// Barras de nivel: se llenan al aparecer en pantalla
-const bars = document.querySelectorAll('.bars i');
-bars.forEach(b => b.style.setProperty('--w', b.dataset.level + '%'));
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-  }), { threshold: 0.4 });
-  bars.forEach(b => io.observe(b));
-} else bars.forEach(b => b.classList.add('on'));
 
-// Botón para guardar como PDF (Imprimir → Guardar como PDF)
-document.getElementById('print').addEventListener('click', () => window.print());
+document.addEventListener("DOMContentLoaded", () => {
+  // Actualizar el año automáticamente
+  const yearElement = document.getElementById("y");
 
-// Año automático en el pie
-document.getElementById('y').textContent = new Date().getFullYear();
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Botón para imprimir o guardar como PDF
+  const printButton = document.getElementById("print");
+
+  if (printButton) {
+    printButton.addEventListener("click", () => {
+      window.print();
+    });
+  }
+
+  // Animaciones de las secciones
+  const sections = document.querySelectorAll(
+    ".section, .intro-strip, .contact-section"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    sections.forEach((section) => {
+      section.classList.add("reveal");
+      observer.observe(section);
+    });
+  }
+});
